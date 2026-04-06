@@ -72,3 +72,109 @@ function EjercicioN4() {
         console.log("Letra: ", letras[resto]);
     }
 }
+
+function EjercicioN5() {
+
+    var resultado = 1;
+
+    var numero;
+
+    numero = prompt("Ingrese un número ");
+
+    if(numero == null || isNaN(numero) || numero == "" || numero == 0)
+    {
+        console.log("el caracter ingresado no es un número");
+    }
+
+    else{
+
+    for (var i = 1; i <= numero; i++)
+    {
+        resultado = resultado * i;
+    }
+        console.log("el factorial es: ", resultado);
+    }
+}
+
+function EjercicioN6() {
+
+    var numero = prompt("Ingrese un número");
+
+    if(isNaN(numero) || numero == null || numero == "")
+    {
+        document.writeln("No es un número")
+    }
+
+    else if(numero % 2 === 0)
+    {
+        document.writeln("El número ingresado es: ", numero);
+        document.writeln("El numero es par")
+    }
+
+    else{
+        document.writeln("El número ingresado es: ", numero);
+        document.writeln("El numero es impar")
+    }
+
+}
+
+function EjercicioN7() {
+    var texto = prompt("Ingrese algún texto: ");
+
+    if(!isNaN(texto))
+    {
+        console.log("el texto debe contener solo letras, no números");
+    }
+
+    else if(texto == texto.toUpperCase())
+    {   
+        console.log("el texto ingresado es:", texto);
+        console.log("El texto está formado por mayúsculas");
+    }
+
+    else if(texto == texto.toLowerCase())
+    {
+        console.log("el texto ingresado es:", texto);
+        console.log("El texto está formado por minúsculas");
+    }
+
+    else {
+        console.log("el texto ingresado es:", texto);
+        console.log("El texto está formado por mayúsculas y minúsculas");
+    }
+}
+
+function EjercicioN8() {
+
+    let texto = prompt("Ingrese un texto: ");
+    let str = texto.replaceAll(" "," ").toLocaleLowerCase();
+    let arrStr = str.split("").reverse().join("");
+    
+    if( str == arrStr){
+        console.log("El texto ingresado es: ", texto);
+        console.log("El texto ingresado es un palíndromo");
+    }
+    else{
+        console.log("El texto ingresado es: ", texto);
+        console.log("El texto ingresado no es un palíndromo");
+    }
+}
+
+function EjercicioN10() {
+    let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    for(var i = 0; i < 36000; i++)
+    {
+        let dado1 = Math.floor(Math.random() * 6) + 1;
+        let dado2 = Math.floor(Math.random() * 6) + 1;
+        let suma = dado1 + dado2;
+        arr[suma] = arr[suma] + 1;
+    }
+
+    console.log(arr);
+
+    for(let j = 2; j < 13; j++)
+    {
+        console.log("El numero" + j + "salió: "+ arr[j]+ "veces en total.");
+    }
+}
