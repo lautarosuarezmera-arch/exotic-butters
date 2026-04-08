@@ -123,7 +123,7 @@ function EjercicioN7() {
 
     if(!isNaN(texto))
     {
-        console.log("el texto debe contener solo letras, no números");
+        console.log("el texto debe contener en su mayoría letras");
     }
 
     else if(texto == texto.toUpperCase())
@@ -175,6 +175,6 @@ function EjercicioN10() {
 
     for(let j = 2; j < 13; j++)
     {
-        console.log("El numero" + j + "salió: "+ arr[j]+ "veces en total.");
+        console.log("El numero " + j + " salió: "+ arr[j]+ " veces en total.");
     }
 }
