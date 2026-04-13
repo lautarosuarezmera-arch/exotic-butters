@@ -58,7 +58,8 @@ function EjercicioN4() {
     var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K',
 'E', 'T'];
 
-    var dni = prompt("escriba su DNI: ");
+    var dni = prompt("Escriba su DNI: ");
+    var letradeDNI = prompt("Escriba la letra de su DNI: ");
 
     if(dni == null ||isNaN(dni) || dni == "" || dni < 0 || dni > 99999999)
     {
@@ -67,9 +68,20 @@ function EjercicioN4() {
 
     else{
         var resto = dni % 23;
+        var LetraCorrecta = letras[resto]
 
-        console.log("Resto: ", resto);
-        console.log("Letra: ", letras[resto]);
+        if(LetraCorrecta !== letradeDNI.toUpperCase())
+        {
+            console.log("La letra del DNI no coincide");
+        }
+
+        else{
+
+            console.log("Resto: ", resto);
+            console.log("Letra: ", LetraCorrecta);
+
+            console.log("La letra y número del DNI coinciden");
+        }
     }
 }
 
