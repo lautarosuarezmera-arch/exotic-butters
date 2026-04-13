@@ -172,6 +172,57 @@ function EjercicioN8() {
     }
 }
 
+function EjercicioN9() {
+    let p1 = new Estudiante("Mateo", 16, "Masculino", "4°", "15°")
+    console.log(p1.obtDetalles())
+    console.log(p1.registrar())
+
+    let p2 = new Profesor("Mauro", 67, "Masculino", "Lengua", "Secundario")
+    console.log(p2.obtDetalles())
+    console.log(p2.asignar())
+
+}
+
+    /* PERSONA */
+    function Persona(nombre, edad, genero){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.genero = genero;
+    }
+
+    Persona.prototype.obtDetalles = function(){
+        console.log(`Nombre: ${this.nombre}, Edad: ${this.edad}, Genero: ${this.genero}`);
+    };
+
+     /* ESTUDIANTE */
+    function Estudiante(nombre, edad, genero, curso, grupo){
+        Persona.call(this, nombre, edad, genero);
+        this.curso = curso;
+        this.grupo = grupo;
+    }
+
+    Estudiante.prototype = Object.create(Persona.prototype);
+    Estudiante.prototype.constructor = Estudiante;
+
+    Estudiante.prototype.registrar = function(){
+        console.log(`${this.nombre} ha sido registrado en el curso ${this.curso} y grupo: ${this.grupo}`);
+    }
+
+      /* PROFESOR */
+    function Profesor(nombre, edad, genero, asignatura, nivel){
+        Persona.call(this, nombre, edad, genero);
+        this.asignatura = asignatura;
+        this.nivel = nivel;
+    }
+    
+    Profesor.prototype = Object.create(Persona.prototype);
+    Profesor.prototype.constructor = Profesor;
+    
+    Profesor.prototype.asignar = function(){
+        console.log(`${this.nombre} ha sido asignado a la asignatura ${this.asignatura} y nivel ${this.nivel}`);
+    }
+
+
 function EjercicioN10() {
     let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
